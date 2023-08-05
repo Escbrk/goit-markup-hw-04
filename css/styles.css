@@ -104,10 +104,6 @@ button {
   border: 0;
 }
 
-section {
-  text-align: center;
-}
-
 span {
   color: var(--color-navy-blue);
 }
@@ -127,6 +123,7 @@ span {
 
 .section {
   padding: 120px 0;
+  text-align: center;
 }
 
 .list {
@@ -219,8 +216,9 @@ span {
 
 .hero {
   background-color: var(--color-navy-blue);
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), 
-rgba(46, 47, 66, 0.7)), url(../images/hero-img.jpg);  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/hero-img.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   padding: 188px 0;
 }
@@ -401,10 +399,6 @@ rgba(46, 47, 66, 0.7)), url(../images/hero-img.jpg);  background-repeat: no-repe
 
 .services-btns {
   margin-bottom: 72px;
-}
-
-.services-btns-item {
-  padding: 24px 0;
 }
 
 .sorting-btn {
