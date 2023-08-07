@@ -5,7 +5,7 @@
   --color-iris: #4d5ae5;
   --color-ocean: #404bbf;
   --color-navy-blue: #2e2f42;
-  --color-gree: #31d0aa;
+  --color-green: #31d0aa;
   --color-slate: #434455;
   --color-light-slate: #8e8f99;
   --color-cornflower: #e7e9fc;
@@ -14,11 +14,17 @@
   --color-grey: #2e2f42;
   --color-dairy: #fcfcfc;
   --color-white: #ffffff;
-
-  /*! -------------COLORS END-------------*/
 }
 
+/*! -------------COLORS END-------------*/
+
 /*! -------------MAIN STYLES START-------------*/
+*,
+:hover,
+:focus {
+  transition: color 250ms, background-color 250ms, box-shadow 250ms;
+}
+
 .container {
   max-width: 1158px;
   margin: 0 auto;
@@ -93,6 +99,7 @@ h3 {
 
 a {
   text-decoration: none;
+  display: block;
 }
 
 address {
@@ -170,7 +177,6 @@ span {
   letter-spacing: 0.02em;
   color: var(--color-navy-blue);
   padding: 24px 0;
-  display: block;
 }
 
 .active {
@@ -190,7 +196,6 @@ span {
   letter-spacing: 0.02em;
   color: var(--color-slate);
   padding: 24px 0;
-  display: block;
 }
 
 /*! -------------HEADER END-------------*/
@@ -198,6 +203,10 @@ span {
 /*? __________________MAIN SECTION */
 
 /*! -------------HERO START-------------*/
+
+.hero-title {
+  text-align: center;
+}
 
 .main-btn {
   background-color: var(--color-iris);
@@ -256,6 +265,17 @@ span {
   width: calc((100% - 3 * 24px) / 4);
 }
 
+.features-icon {
+  border-radius: 4px;
+  background: var(--color-cloud);
+  width: 264px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
 /*! -------------FEATURES END-------------*/
 
 /*! -------------PORTFOLIO START-------------*/
@@ -301,7 +321,7 @@ span {
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-      position: relative;
+  position: relative;
   overflow: hidden;
 }
 
@@ -316,25 +336,40 @@ span {
   letter-spacing: 0.02em;
 }
 
-.hidden-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--color-dairy);
-  background-color: rgb(84 127 214 / 70%);
-  transform: translateY(100%);
-  transition: transform 250ms ease-in-out;
-}
-.team-item:hover .hidden-text {
-  transform: translateY(0);
-}
-
 .card-container {
   padding: 32px 0;
 }
+.social-link {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding-left: 16px;
+  margin-top: 8px;
+}
 
+.social-item {
+  background-color: var(--color-iris);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+}
+.social-item-link {
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.social-item:hover {
+  background-color: var(--color-green);
+}
+
+.social-icon {
+  fill: var(--color-cloud);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /*! -------------TEAM END-------------*/
 
 .list-btn:hover,
@@ -343,13 +378,41 @@ span {
   color: var(--main-bcg-color);
 }
 
-.hero-title {
-  text-align: center;
+.customers-title {
+  margin-bottom: 72px;
+}
+
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+
+.customers-item {
+  border-radius: 4px;
+  border: 1px solid var(--lightslate, #8e8f99);
+  width: calc((100% - 5 * 24px) / 6);
+  height: 88px;
+  position: relative;
+}
+
+.customers-item:hover {
+  border: 1px solid var(--color-ocean);
+}
+.customers-link {
+  padding: 44px;
+}
+
+.costomer-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .footer-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 120px;
 }
 
 .footer {
@@ -372,6 +435,16 @@ span {
   margin-bottom: 16px;
 }
 
+.footer-social-text {
+  color: var(--color-white);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.footer-social .social-link {
+  padding-left: 0;
+  margin-top: 16px;
+}
 /*! -------------PORTFOLIO PAGE__/START-------------*/
 
 .list-btn {
@@ -434,3 +507,39 @@ span {
 }
 
 /*! -------------PORTFOLIO PAGE__/END-------------*/
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(76, 76, 76, 0.596);
+  top: 0;
+  transition: opacity 300ms, visibility 300ms linear;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 517px;
+  min-height: 794px;
+  border-radius: 15px;
+  background-color: var(--color-white);
+  transition: transform 300ms linear;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
