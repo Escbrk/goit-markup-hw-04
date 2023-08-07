@@ -390,8 +390,6 @@ span {
 .customers-item {
   width: calc((100% - 5 * 24px) / 6);
   position: relative;
-  width: 168px;
-  height: 88px;
 }
 
 .customers-link {
@@ -495,9 +493,7 @@ span {
   background: var(--color-white);
   text-align: left;
 }
-.customers-item:hover {
-  fill: red;
-}
+
 
 .services-btns {
   margin-bottom: 72px;
