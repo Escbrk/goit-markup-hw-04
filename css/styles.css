@@ -543,6 +543,7 @@ span {
   position: relative;
   overflow: hidden;
 }
+
 .services-link:hover .services-cover-text {
   transform: translateY(0%);
 }
