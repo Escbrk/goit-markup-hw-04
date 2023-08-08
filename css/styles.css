@@ -192,6 +192,7 @@ span {
   color: var(--color-ocean);
   /* border-bottom: 4px solid var(--color-ocean); */
 }
+
 .active::after {
   content: '';
   position: absolute;
@@ -265,8 +266,6 @@ span {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.04em;
-  font-family: 'Roboto', sans-serif;
   padding: 16px 32px;
 }
 
@@ -437,7 +436,7 @@ span {
   border: 1px solid var(--lightslate, #8e8f99);
 }
 
-.costomer-logo {
+.customers-logo {
   fill: currentColor;
 }
 
